@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="700.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.GameController">
+   <children>
+      <FlowPane hgap="20.0" prefHeight="0.0" prefWidth="600.0">
+         <children>
+            <Label text="选择英雄数量：" />
+            <ComboBox fx:id="c_num" prefWidth="150.0" />
+         </children>
+      </FlowPane>
+      <FlowPane hgap="20.0" prefHeight="5.0" prefWidth="600.0">
+         <children>
+            <Label text="点击添加英雄：" />
+            <Button mnemonicParsing="false" onAction="#addHero" text="法师" />
+            <Button mnemonicParsing="false" onAction="#addHero" text="治疗师" />
+            <Button mnemonicParsing="false" onAction="#addHero" text="猎人" />
+            <Button mnemonicParsing="false" onAction="#addHero" text="战士" />
+            <Button fx:id="start" mnemonicParsing="false" onAction="#start" text="开始游戏" />
+         </children>
+      </FlowPane>
+      <Label fx:id="playTurn" text="第 1 回合" />
+      <HBox alignment="CENTER" prefHeight="127.0" prefWidth="600.0" spacing="50.0">
+         <children>
+            <TitledPane collapsible="false" text="英雄">
+               <content>
+                  <VBox fx:id="vb_heros" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" />
+               </content>
+            </TitledPane>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="选择操作" />
+                  <ComboBox fx:id="c_target" prefWidth="150.0" />
+                  <Button fx:id="ok" mnemonicParsing="false" onAction="#ok" text="行动" />
+               </children>
+            </VBox>
+            <TitledPane collapsible="false" text="敌人">
+               <content>
+                  <VBox fx:id="vb_enemy" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" />
+               </content>
+            </TitledPane>
+         </children>
+      </HBox>
+      <Label text="战斗信息" />
+      <ListView fx:id="infos" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
